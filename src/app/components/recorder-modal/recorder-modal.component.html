@@ -1,0 +1,16 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="close()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h3>TruVideo Recorder</h3>
+      <button class="close-btn" (click)="close()">✕</button>
+    </div>
+    <div class="modal-body">
+      <iframe
+        #recorderIframe
+        [src]="spaUrl"
+        allow="camera; microphone"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>

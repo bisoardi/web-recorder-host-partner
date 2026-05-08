@@ -1,0 +1,36 @@
+<div class="demo-container">
+  <header class="demo-header">
+    <h1>TruVideo Partner Demo</h1>
+    <p>Simula la integración del iframe con postMessage</p>
+  </header>
+
+  <section class="token-section">
+    <label for="sessionInput">Recorder Session ID</label>
+    <input
+      id="sessionInput"
+      type="text"
+      [(ngModel)]="recorderSessionId"
+      placeholder="ej: session-abc123"
+    />
+  </section>
+
+  <section class="token-section">
+    <label for="tokenInput">Launch Token</label>
+    <input
+      id="tokenInput"
+      type="text"
+      [(ngModel)]="launchToken"
+      placeholder="ej: base64url token de 43 chars"
+    />
+  </section>
+
+  <section class="actions">
+    <button class="btn btn-primary" (click)="openRecorder()">Abrir Recorder</button>
+  </section>
+</div>
+
+<app-recorder-modal
+  #recorderModal
+  [recorderSessionId]="recorderSessionId"
+  [launchToken]="launchToken"
+/>
